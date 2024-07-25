@@ -1,12 +1,10 @@
 package com.app.farm.farmApp.entity;
 
-import com.app.farm.farmApp.enums.Crop;
-import com.app.farm.farmApp.enums.Season;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 
 @Entity
 public class Field {
@@ -17,14 +15,17 @@ public class Field {
 	
     private Double plantedArea;
     
-    private Crop crop;
+    private String crop;
     
-    private Season season;
+    private String season;
     
     private Double expectedProduct;
     
     private Double actualHarvestedProduct;
-
+    
+    @ManyToOne
+    private Farm farm;
+    
 	public Integer getId() {
 		return id;
 	}
@@ -41,20 +42,36 @@ public class Field {
 		this.plantedArea = plantingArea;
 	}
 
-	public Crop getCrop() {
+	public String getCrop() {
 		return crop;
 	}
 
-	public void setCrop(Crop crop) {
+	public void setCrop(String crop) {
 		this.crop = crop;
 	}
 
-	public Season getSeason() {
+	public String getSeason() {
 		return season;
 	}
 
-	public void setSeason(Season season) {
+	public void setSeason(String season) {
 		this.season = season;
+	}
+
+	public Double getPlantedArea() {
+		return plantedArea;
+	}
+
+	public void setPlantedArea(Double plantedArea) {
+		this.plantedArea = plantedArea;
+	}
+
+	public Farm getFarm() {
+		return farm;
+	}
+
+	public void setFarm(Farm farm) {
+		this.farm = farm;
 	}
 
 	public Double getExpectedProduct() {

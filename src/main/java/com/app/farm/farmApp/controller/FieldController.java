@@ -22,27 +22,27 @@ public class FieldController {
 	@Autowired
 	private FieldService fieldService;
 
-	@PostMapping
+	@PostMapping("createField")
 	public Field createField(@RequestBody Field field) {
 		return fieldService.createField(field);
 	}
 
-	@GetMapping
+	@GetMapping("getAllFields")
 	public List<Field> getAllFields() {
 		return fieldService.getAllFields();
 	}
 
-	@GetMapping("/{fieldId}")
+	@GetMapping("getFieldById/{fieldId}")
 	public Field getFieldById(@PathVariable Integer fieldId) {
 		return fieldService.getFieldById(fieldId);
 	}
 
-	@PutMapping("/{fieldId}")
+	@PutMapping("updateField/{fieldId}")
 	public Field updateField(@PathVariable Integer fieldId, @RequestBody Field field) {
 		return fieldService.updateField(fieldId, field);
 	}
 
-	@DeleteMapping("/{fieldId}")
+	@DeleteMapping("deleteField/{fieldId}")
 	public void deleteField(@PathVariable Integer fieldId) {
 		fieldService.deleteField(fieldId);
 	}

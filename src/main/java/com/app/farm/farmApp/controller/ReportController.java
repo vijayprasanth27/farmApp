@@ -8,9 +8,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.app.farm.farmApp.entity.Farm;
-import com.app.farm.farmApp.enums.Crop;
-import com.app.farm.farmApp.enums.Season;
 import com.app.farm.farmApp.service.ReportService;
 
 @RestController
@@ -21,12 +18,12 @@ public class ReportController {
 	private ReportService reportService;
 
 	@GetMapping("/generateFarmReport/{season}")
-	public Map<Farm, String> getFarmById(@PathVariable Season season) {
+	public Map<String, String> getFarmById(@PathVariable String season) {
 		return reportService.generateFarmReports(season);
 	}
 
 	@GetMapping("/generateCropReport/{season}")
-	public Map<Crop, String> getCropById(@PathVariable Season season) {
+	public Map<String, String> getCropById(@PathVariable String season) {
 		return reportService.generateCropReports(season);
 	}
 }

@@ -22,27 +22,27 @@ public class FarmController {
 	@Autowired
     private FarmService farmService;
 	
-	@PostMapping
+	@PostMapping("/createFarm")
 	public Farm createFarm(@RequestBody Farm farm) {
 		return farmService.createFarm(farm);
 	}
 
-	@GetMapping
+	@GetMapping("/getAllFarms")
 	public List<Farm> getAllFarms() {
 		return farmService.getAllFarms();
 	}
 
-	@GetMapping("/{id}")
+	@GetMapping("getFarmById/{id}")
 	public Farm getFarmById(@PathVariable Integer id) {
 		return farmService.getFarmById(id);
 	}
 
-	@PutMapping("/{id}")
+	@PutMapping("updateFarm/{id}")
 	public Farm updateFarm(@PathVariable Integer id, @RequestBody Farm farm) {
 		return farmService.updateFarm(id, farm);
 	}
 
-	@DeleteMapping("/{id}")
+	@DeleteMapping("deleteFarm/{id}")
 	public void deleteFarm(@PathVariable Integer id) {
 		farmService.deleteFarm(id);
 	}

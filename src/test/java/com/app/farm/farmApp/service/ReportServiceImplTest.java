@@ -1,10 +1,8 @@
 package com.app.farm.farmApp.service;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -15,8 +13,6 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 import com.app.farm.farmApp.entity.Farm;
 import com.app.farm.farmApp.entity.Field;
-import com.app.farm.farmApp.enums.Crop;
-import com.app.farm.farmApp.enums.Season;
 import com.app.farm.farmApp.service.impl.FarmServiceImpl;
 import com.app.farm.farmApp.service.impl.ReportServiceImpl;
 
@@ -37,17 +33,19 @@ public class ReportServiceImplTest {
 		farm1.setName("Farm1");
 		List<Field> fields = new ArrayList<>();
 		Field field1 = new Field();
-		field1.setCrop(Crop.RICE);
-		field1.setSeason(Season.SUMMER);
+		field1.setCrop("RICE");
+		field1.setSeason("SUMMER");
 		field1.setActualHarvestedProduct(5000.00);
 		field1.setExpectedProduct(10000.00);
+		field1.setFarm(farm1);
 		fields.add(field1);
 		farm1.setFields(fields);
 		farms.add(farm1);
 		
 		Mockito.when(farmService.getAllFarms()).thenReturn(farms);
 		
-		Map<Farm,String> resultMap = reportService.generateFarmReports(Season.SUMMER);
+		Map<String, String> resultMap = reportService.generateFarmReports("SUMMER");
+		
 		System.out.print(resultMap);
 	}
 }

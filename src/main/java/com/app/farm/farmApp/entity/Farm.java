@@ -17,7 +17,7 @@ public class Farm {
 	
 	private String name;
 	
-	@OneToMany
+	@OneToMany(mappedBy="farm")
 	private List<Field> fields;
 	
 	public Integer getId() {
