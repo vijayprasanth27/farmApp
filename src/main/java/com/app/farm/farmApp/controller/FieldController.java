@@ -16,7 +16,7 @@ import com.app.farm.farmApp.entity.Field;
 import com.app.farm.farmApp.service.FieldService;
 
 @RestController
-@RequestMapping("/farms/{farmId}/fields")
+@RequestMapping("/fields")
 public class FieldController {
 
 	@Autowired
