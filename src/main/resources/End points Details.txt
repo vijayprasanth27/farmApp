@@ -12,11 +12,11 @@ localhost:8080/farms/deleteFarm/1	- To delete Farm by id
 FieldController end points
 ==========================
 
-localhost:8080/farms/1/fields/createField 	- To create a new Field
-localhost:8080/farms/1/fields/getAllFields	- To fetch all fields
-localhost:8080/farms/1/fields/getFieldById/1	- To retrieve the field by passing id
-localhost:8080/farms/1/fields/updateField/1 	- To update the field by id
-localhost:8080/farms/1/fields/deleteField/1	- To delete the field by id
+localhost:8080/fields/createField 	- To create a new Field
+localhost:8080/fields/getAllFields	- To fetch all fields
+localhost:8080/fields/getFieldById/1	- To retrieve the field by passing id
+localhost:8080/fields/updateField/1 	- To update the field by id
+localhost:8080/fields/deleteField/1	- To delete the field by id
 
 ReportController end point
 ==========================
