@@ -1,0 +1,24 @@
+End points
+
+FormController end points
+==========================
+
+localhost:8080/farms/createFarm  	- To create a new Farm
+localhost:8080/farms/getAllFarms 	- To fetch all farms
+localhost:8080/farms/getFarmById/1 	- To retrieve the farm by passing id
+localhost:8080/farms/updateFarm/1	- To update the Farm by id
+localhost:8080/farms/deleteFarm/1	- To delete Farm by id
+
+FieldController end points
+==========================
+
+localhost:8080/farms/1/fields/createField 	- To create a new Field
+localhost:8080/farms/1/fields/getAllFields	- To fetch all fields
+localhost:8080/farms/1/fields/getFieldById/1	- To retrieve the field by passing id
+localhost:8080/farms/1/fields/updateField/1 	- To update the field by id
+localhost:8080/farms/1/fields/deleteField/1	- To delete the field by id
+
+ReportController end point
+==========================
+localhost:8080/reports/generateFarmReport/SUMMER   - To generate report by Farms for a Season
+localhost:8080/reports/generateCropReport/SUMMER   - To generate report by Crops for a season
